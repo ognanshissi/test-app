@@ -1,3 +1,4 @@
+import { AlertService } from './core/services/alert.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'store';
+
+  constructor( private alertService: AlertService){
+      // How you can use alert service to display message to user
+      this.alertService.show({type: 'info', message: "Bienvenue sur l'appli de test chez INFI"});
+  }
+
+
+
 }

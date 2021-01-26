@@ -1,3 +1,15 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+a.menu-link {
+  font-size: 15px;
+  text-decoration: none;
+  color: #000 !important;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+a.menu-link:hover {
+  text-decoration: none;
+}

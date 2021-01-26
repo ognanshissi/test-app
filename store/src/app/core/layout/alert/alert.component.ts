@@ -1,4 +1,6 @@
+import { AlertService, IAlert } from './../../services/alert.service';
 import {Component, Input, OnInit} from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-alert',
@@ -6,17 +8,19 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit {
-  @Input() message = 'hello world';
-  @Input() type: 'primary' | 'secondary' | 'danger' | 'warning' | 'info' | 'success' = 'primary';
 
-  hideDialog = false;
-  constructor() { }
+  alertList$: Observable<IAlert[]> = new Observable<IAlert[]>();
+
+  constructor(
+    private alertService: AlertService
+  ) { }
 
   ngOnInit(): void {
+    this.alertList$ = this.alertService.alertList$;
   }
 
-  closeDialog() {
-    this.hideDialog = true;
+  closeDialog(index: number) {
+    this.alertService.removeAlert(index)
   }
 
 }

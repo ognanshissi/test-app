@@ -1,3 +1,4 @@
+import { IProduct } from './../../core/models/product';
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
@@ -7,19 +8,23 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SingleProductComponent implements OnInit {
 
-  @Input() product: { id: number, name: string, description: string, qty: number, price: number } = {
-    id: 1,
+  @Input() product: IProduct = {
+    id: '1',
     name: 'Canish',
     description: 'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.',
     qty: 12,
-    price: 200
-  } ;
+    price: 200,
+    thumbnail: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
   addCart() {
+    console.log(this.product);
     // add the product to the cart here
   }
 }

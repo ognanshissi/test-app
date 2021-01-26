@@ -2,9 +2,9 @@
   <span>Infi Shopify</span>
   <span class="example-spacer"></span>
   <ng-container>
-    <a href="" [routerLink]="['/products']">Produits</a>
+    <a class="menu-link" href="" [routerLink]="['/products']">Produits</a>
   </ng-container>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button (click)="goToCart()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>shopping_cart</mat-icon>
   </button>
 </mat-toolbar>
