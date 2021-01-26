@@ -16,7 +16,20 @@ app.get('/', (req: Request<any>, res: Response<any>, next: NextFunction) => {
     res.json({companyName: 'InfiSoftware'})
 })
 
+// handle errors
+app.use(function(req: Request, res: Response, next: NextFunction) {
+    next({message: 'Not Found', status: 404});
+});
+
+app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
+    res.status(err.status || 500).json({
+        message: err.message,
+        status: err.status || 500
+    });
+});
+
 let PORT = process.env.PORT || `${environment.PORT}`;
+
 mongoose.connect(`${environment.MONGO_URL}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
