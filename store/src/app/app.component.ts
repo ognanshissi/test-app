@@ -1,4 +1,4 @@
-import { AlertService } from './core/services/alert.service';
+import { AlertService } from './core/services';
 import { Component } from '@angular/core';
 
 @Component({
