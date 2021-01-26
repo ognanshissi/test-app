@@ -14,7 +14,7 @@ app.use(cors());
 
 app.get('/', (req: Request<any>, res: Response<any>, next: NextFunction) => {
     res.json({companyName: 'InfiSoftware'})
-})
+});
 
 // handle errors
 app.use(function(req: Request, res: Response, next: NextFunction) {

@@ -10,13 +10,12 @@ export class ToolbarComponent implements OnInit {
 
   constructor(
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  goToCart() {
-    this.router.navigate(['/cart'])
+  goToCart(): void {
+    this.router.navigate(['/cart']);
   }
 
 }

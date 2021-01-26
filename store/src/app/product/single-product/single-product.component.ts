@@ -1,4 +1,4 @@
-import { IProduct } from './../../core/models/product';
+import { IProduct } from '../../core/models';
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
@@ -15,16 +15,14 @@ export class SingleProductComponent implements OnInit {
     qty: 12,
     price: 200,
     thumbnail: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
-  }
+  };
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-
-  addCart() {
-    console.log(this.product);
+  addCart(): void {
     // add the product to the cart here
+    console.log(this.product);
   }
 }

@@ -19,8 +19,8 @@ export class AlertComponent implements OnInit {
     this.alertList$ = this.alertService.alertList$;
   }
 
-  closeDialog(index: number) {
-    this.alertService.removeAlert(index)
+  closeDialog(index: number): void {
+    this.alertService.removeAlert(index);
   }
 
 }
