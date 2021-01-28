@@ -4,14 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SharedModule } from '../shared/shared.module';
 
-
 const routes: Routes = [
   {
     path: '',
     component: ProductListComponent
   }
 ];
-
 
 @NgModule({
   declarations: [SingleProductComponent, ProductListComponent],

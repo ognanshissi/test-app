@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Optional } from '@angular/core';
 import { NgModule, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
