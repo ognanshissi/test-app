@@ -32,9 +32,9 @@ Votre api angular est démarrée sur le port [http://localhost:3000](http://loca
 
 Vous devez implementer les tâches suivantes :
 
-- Implementer une api pour récupérer les produits et les afficher sur la page produit de qui existe deja dans la base de données.
-- L'ajout de produit dans un panier et incrémenté le nombre d'element dans le panier en haut a droite
-- Lister les produits dans le panier sur la page panier avec possibilité de modifier la quantité
+- Implementer une api pour récupérer les produits et les afficher sur la page de produit. Les produits ont été créés dans la collection `products` qui existe déjà dans la base de données sur `Mongo Atlas`.
+- L'ajout de produit dans un panier incrémente le nombre d'élément dans le panier en haut à droite
+- Lister les produits du panier sur la page `panier` avec possibilité de modifier la quantité
 - Implementer une api de sauvegarde de commande
 
 ## Bonus
