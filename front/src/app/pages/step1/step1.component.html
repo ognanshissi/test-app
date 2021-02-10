@@ -1,0 +1,38 @@
+<div class="center">
+  <div class="container">
+    <form [formGroup]="step1Form">
+      <div class="row">
+        <div class="col-md-6">
+          <input formControlName="lastName" placeholder="Nom" />
+        </div>
+        <br>
+        <div class="col-md-6">
+          <input formControlName="firstName" placeholder="Prenom(s)" />
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <input formControlName="email" placeholder="E-mail" />
+        </div>
+        <div class="col-md-6">
+          <input formControlName="phoneNumber" placeholder="Contact" />
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-element">
+            <button mat-raised-button color="primary" [disabled]="step1Form.invalid" (click)="onSubmit('/step2')" class="button">
+              Suivant
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+</div>

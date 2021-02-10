@@ -1,0 +1,36 @@
+<div class="center">
+    <div class="container">
+        <form [formGroup]="step3Form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div *ngFor="let item of products">
+                        <label>
+                            <input formControlName="productsCtrl" [value]="item" (change)="onCheckboxChange($event)"
+                                type="checkbox" />{{ item.name }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-element">
+                        <button mat-raised-button color="primary" (click)="goToStep2('/step2')" class="button">
+                            Précédant
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-element">
+                        <button mat-raised-button color="primary" (click)="onSubmit('/recap')" class="button">
+                            Suivant
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

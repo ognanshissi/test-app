@@ -1,0 +1,49 @@
+<div class="center">
+    <div class="container">
+      <form [formGroup]="step2Form">
+        <div class="row">
+          <div class="col-md-12">
+            <input formControlName="companyName" placeholder="Nom de l'entreprise" />
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <select formControlName="companyLength">
+                    <option value="" disabled>--Selectionner la tranche--</option>
+                    <option *ngFor="let item of nbEmloyer" [ngValue]="item.value">{{item.label}}</option>
+                </select>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-12">
+              <input formControlName="companyLocation" placeholder="Adresse géographique" />
+            </div>
+          </div>
+          <br>
+  
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-element">
+              <button mat-raised-button color="primary" (click)="goToStep1('/step1')" class="button">
+                Précédant
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-element">
+              <button mat-raised-button color="primary"  (click)="onSubmit('/step3')" class="button">
+                Suivant
+              </button>
+            </div>
+          </div>
+        </div>
+  
+  
+      </form>
+    </div>
+  </div>

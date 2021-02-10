@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.buttom-style {
+    color: #fff9f7;
+    border: 2px solid #1869a6;
+    border-radius: 5px;
+    background: #1565c0;
+    height: 50px;
+    width: 300px;
+}
+
+.center {
+    text-align: center;
+    padding: 30%;
+}

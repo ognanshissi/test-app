@@ -1,5 +1,9 @@
 const express = require('express');
 const cors = require('cors');
+const corsOptions = {
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
@@ -16,10 +20,12 @@ app.get('/', (req, res, next) => {
     res.status(200).json({name: "Infi Software Test api"})
 });
 
+const productRoutes = require("./routes/product.route");
+
 // handle errors
-app.use((req, res, next) => {
-    next({message: 'Not Found', status: 404});
-});
+// app.use((req, res, next) => {
+//     next({message: 'Not Found', status: 404});
+// });
 
 app.use((err, req, res, next) => {
     res.status(err.status || 500).json({
@@ -43,3 +49,5 @@ mongoose.connect(`mongodb+srv://test_db_user:bubscLNGpuRGVL69@cluster0.af1hq.mon
     .catch(err => {
         console.log(err);
     });
+
+    app.use("/products", cors(corsOptions), productRoutes);
